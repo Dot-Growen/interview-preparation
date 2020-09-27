@@ -17,8 +17,8 @@
 - [Recursion & Backtracking](#recursion--backtracking)
 - [Search](#search)
 - [Sorting](#sorting)
-    - [Mark and Toys](#maximumToys)
-    - [Sorting: Bubble Sort](#countSwaps)
+  - [Mark and Toys](#maximumToys)
+  - [Sorting: Bubble Sort](#countSwaps)
 - [Stacks & Queues](#stacks--queues)
 - [String Manipulation](#string-manipulation)
   - [Strings: Making Anagrams](#makeAnagram)
@@ -251,10 +251,6 @@ maximumToys([1, 12, 5, 111, 200, 1000, 10], 50)
 ###### 2. First Element: firstElement, where `firstElement` is the first element in the sorted array.
 ###### 3. Last Element: lastElement, where `lastElement` is the last element in the sorted array.
 
-## Stacks & Queues
-
-## String Manipulation
-
 ```javascript
 function countSwaps (a) {
   const swap = (arr, idx1, idx2) => {
@@ -283,6 +279,9 @@ function countSwaps (a) {
 
 console.log(countSwaps([3, 2, 1]))
 ```
+
+## Stacks & Queues
+## String Manipulation
 
 #### [makeAnagram](https://www.hackerrank.com/challenges/ctci-making-anagrams/problem)
 
