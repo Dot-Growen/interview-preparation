@@ -23,6 +23,7 @@
 - [String Manipulation](#string-manipulation)
   - [Strings: Making Anagrams](#makeAnagram)
   - [Alternating Characters](#alternatingCharacters)
+  - [Sherlock & the Vaild String](#isValid)
 - [Trees](#trees)
 
 ## Arrays
@@ -328,6 +329,53 @@ def alternatingCharacters(str):
     return deleted
 
 alternatingCharacters("AAABBBAABB")
+```
+
+#### [isValid](https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem)
+
+###### Sherlock considers a string to be valid if all characters of the string appear the same number of times. It is also valid if he can remove just `1` character at `1` index in the string, and the remaining characters will occur the same number of times. Given a string `s`, determine if it is valid. If so, return YES, otherwise return NO.
+
+```javascript
+function isValid(s) {
+    let counter = {}
+    let valCounter = {}
+    let repeatedFreq = 0 
+    let freqOnce = 0
+    let freqCount = 0
+    let over = 0
+    for (let freq of s) {
+        counter[freq] ? counter[freq] += 1 : counter[freq] = 1
+    }
+
+    for (let freq in counter) {
+        valCounter[counter[freq]] ? valCounter[counter[freq]] += 1 : valCounter[counter[freq]] = 1
+        if (counter[freq] == 1) freqOnce+=1
+    }
+
+    for (let freq in valCounter) {
+        if (valCounter[freq] > repeatedFreq) repeatedFreq = freq
+        freqCount += 1
+    }
+
+    for (let freq in counter) {
+        if (counter[freq] != repeatedFreq) {
+            over += Math.abs(counter[freq] - repeatedFreq)
+        }
+    }
+
+    let output = undefined
+    if (over > 1) {
+        output = "NO"
+    } else {
+        output = "YES"
+    }
+    if (freqOnce == 1  && freqCount == 2 ) {
+        output = "YES"
+    }
+    return output
+}
+console.log(isValid("abcdefghhgfedecba"))
+console.log(isValid("aabbcd"))
 ```
 
 ## Trees
